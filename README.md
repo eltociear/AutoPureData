@@ -55,9 +55,10 @@ A pre-print of the research paper is available on [arXiv:2406.19271](https://arx
 
 
 ## :bookmark_tabs: Citation
+To use my paper for reference, please cite it as below:
 ```bibtex
 @misc{vadlapati2024autopuredataautomatedfilteringweb,
-	title={AutoPureData: Automated Filtering of Web Data for LLM Fine-tuning}, 
+	title={{AutoPureData: Automated Filtering of Web Data for LLM Fine-tuning}},
 	author={Praneeth Vadlapati},
 	year={2024},
 	eprint={2406.19271},
