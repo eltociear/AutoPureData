@@ -1,8 +1,8 @@
 # datasets
+# requests
 groq
 pandas
-pdflatex
 python_dotenv
 replicate
-requests
 tavily-python
+
