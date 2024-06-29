@@ -14,7 +14,7 @@ AutoPureData: Automated Filtering of Web Data for LLM Fine-tuning
 ![GitHub stars](https://img.shields.io/github/stars/Pro-GenAI/AutoPureData)
 <!-- ![GitHub forks](https://img.shields.io/github/forks/Pro-GenAI/AutoPureData) -->
 
-Created by [@prane-eth](https://github.com/prane-eth)
+Created by Praneeth Vadlapati ([@prane-eth](https://github.com/prane-eth))
 
 > [!NOTE]
 > Please star :star: the repository to show your support. <br>
