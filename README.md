@@ -41,6 +41,8 @@ Run the file [Data_filtering.ipynb](./Data_filtering.ipynb)
 
 The collected data can be used for automated fine-tuning of LLMs in [this way](https://platform.openai.com/docs/guides/fine-tuning).
 
+After the filtering process, the data can be used with an LLM as mentioned in [Usage_with_LLMs.ipynb](Usage_with_LLMs.ipynb)
+
 
 ## :hammer_and_wrench: Contributing
 The code has a lot of room for improvement and is still in progress. <br>
