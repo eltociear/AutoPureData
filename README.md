@@ -19,11 +19,18 @@ Created by Praneeth Vadlapati ([@prane-eth](https://github.com/prane-eth))
 > [!NOTE]
 > Please star :star: the repository to show your support. <br>
 
+#### Why AutoPureData?
+LLMs (Generative AI) like ChatGPT do not have the latest updated information.
+The reason for not auto-updating with the latest data is a lot of unsafe or unwanted text around the web.
+
+This project is to automatically collect the data and filter unwanted text using AI and LLMs.
+The auto-filtered data can be used to automatically update knowledge of LLMs.
+
 
 #### _What are filtered:_
 - **Unsafe content** :biohazard:: Toxic, threat, insult, discrimination, political, self-harm,
 	religious, violence, sexual, profanity, flirtation, spam, scam, misleading, and more
-- **Content from unreliable sources** :newspaper:: Unsafe websites and unindexed websites
+- **Content from unreliable sources** :newspaper:: Unsafe websites and unindexed domains (that are not crawled by search engines)
 - **Peronal details** :bust_in_silhouette:: Phone, address, credit card, SSN, IP address, and more
 - **Attacks** :shield:: Adversarial attack attempts (with Data Poisoning)
 
