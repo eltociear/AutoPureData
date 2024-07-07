@@ -4,15 +4,14 @@
 <!-- # $${\color{darkgreen}title here}$$ -->
 <!-- # <span style="color: darkgreen; font-family: 'Segoe UI'; font-size: 48px;">title here</span> -->
 
-AutoPureData: Automated Filtering of Web Data for LLM Fine-tuning
+Automated Filtering of Unwanted Web Data to Update LLM Knowledge
 
-[![License: AFL v3](https://img.shields.io/badge/License-AFLv3-yellow.svg)](https://opensource.org/license/afl-3-0-php)
-[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
-<!-- Views -->
-<!-- https://github.com/silentsoft/hits - enter target URL https://github.com/Pro-GenAI/AutoPureData -->
-[![Hits](https://hits.sh/github.com/Pro-GenAI/AutoPureData/hits.svg?color=7eab00)](https://hits.sh/github.com/Pro-GenAI/AutoPureData/hits/)
-![GitHub stars](https://img.shields.io/github/stars/Pro-GenAI/AutoPureData)
-<!-- ![GitHub forks](https://img.shields.io/github/forks/Pro-GenAI/AutoPureData) -->
+[![License: AFL v3](https://img.shields.io/badge/License-AFLv3-yellow.svg?style=for-the-badge)](./LICENSE.md)
+[![arxiv 2406.19271](https://img.shields.io/badge/arXiv-2406.19271-B31B1B?logo=arxiv&style=for-the-badge)](https://arxiv.org/abs/2406.19271)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
+
+[![Hits](https://hits.sh/github.com/Pro-GenAI/AutoPureData/hits.svg?view=today-total&style=for-the-badge&label=views&color=2a8f05&logo=github)](https://hits.sh/github.com/Pro-GenAI/AutoPureData/hits/)
+![GitHub stars](https://img.shields.io/github/stars/Pro-GenAI/AutoPureData?style=for-the-badge&logo=github)
 
 Created by Praneeth Vadlapati ([@prane-eth](https://github.com/prane-eth))
 
@@ -101,3 +100,5 @@ Use it at your own risk. The code is provided as is without any guarantees or wa
 ## :email: Contact
 For personal queries, please find my contact details here: [linktr.ee/prane.eth](https://linktr.ee/prane.eth)
 
+<!-- star chart
+https://starchart.cc/pro-GenAI/AutoPureData.svg -->

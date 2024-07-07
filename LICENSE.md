@@ -1,4 +1,5 @@
 <!-- Copyright (c) 2024 Praneeth Vadlapati -->
+https://opensource.org/license/afl-3-0-php
 
 Academic Free License ("AFL") v. 3.0
 
