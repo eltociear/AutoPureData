@@ -34,14 +34,8 @@ data_dir = os.path.join(folder, f'{data_name}-{latest_dump_name}')
 os.makedirs(data_dir, exist_ok=True)
 
 ext = 'csv'
-
-flags_list = [
-	'sensitive_topic', 'biased', 'religious', 'lottery', 'scam', 
-	'advertisement', # 'cheating_service', 'unethical', 
-	'adversarial_attack_data_poisoning',
-]
 safe_flag = 'safe'
-unwanted_flags = flags_list
+
 harm_categories = {
 	'S1': 'Violent Crimes',
 	'S2': 'Non-Violent Crimes',
@@ -55,6 +49,12 @@ harm_categories = {
 	'S10': 'Suicide & Self-Harm',
 	'S11': 'Sexual Content'
 }
+flags_list = [
+	'sensitive_topic', 'biased', 'religious', 'lottery', 'scam', 
+	'advertisement', # 'cheating_service', 'unethical', 
+	'data_poisoning_attack', 'garbage'
+]
+unwanted_flags = flags_list
 
 
 def get_filename(index, process_type='full'):
