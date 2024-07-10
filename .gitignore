@@ -1,6 +1,7 @@
 # custom files
 .vscode/
-data/
+data*
+.huggingface/
 
 
 # Byte-compiled / optimized / DLL files
