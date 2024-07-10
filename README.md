@@ -58,7 +58,7 @@ To contribute, star :star: the repository and create a fork, make changes, and c
 <!-- > Note: Contributing to the research paper file will be highly appreciated but cannot get you considered as a co-author. <br> -->
 
 
-## :page_facing_up: Paper
+## :page_facing_up: Research Paper
 A pre-print of the research paper is available on [arXiv:2406.19271](https://arxiv.org/abs/2406.19271) <br>
 
 
@@ -90,7 +90,7 @@ No author is responsible for any misuse or damage caused by this code.
 Use it at your own risk. The code is provided as is without any guarantees or warranty.
 
 
-## :globe_with_meridians: Acknowledgement  <!-- (works cited) -->
+## :globe_with_meridians: Acknowledgement  <!-- (works referred/cited) -->
 - Dataset: HuggingFace FineWeb https://huggingface.co/datasets/HuggingFaceFW/fineweb
 - Unsafe text detections: Meta Llama Guard 2 https://github.com/meta-llama/PurpleLlama/blob/main/Llama-Guard2/MODEL_CARD.md
 - Other detections: Meta Llama 3 https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md
