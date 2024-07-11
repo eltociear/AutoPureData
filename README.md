@@ -38,16 +38,20 @@ Languages supported: Only English for now (more languages will be added when con
 
 ## :rocket: Quick Start
 ```bash
-cp .env.example .env
 pip install -r requirements.txt
+cp .env.example .env
 ```
 Now, edit the `.env` file and add your API keys. <br>
-Run the file [Data_filtering.ipynb](./Data_filtering.ipynb)
+Run the file [Data_flagging.ipynb](Data_flagging.ipynb)
 	to collect and filter the latest web data.
-
-The collected data can be used for automated fine-tuning of LLMs in [this way](https://platform.openai.com/docs/guides/fine-tuning).
+Run the file [Analytics_and_Filtering.ipynb](Analytics_and_Filtering.ipynb)
+	to manually correct the flagging.
 
 After the filtering process, the data can be used with an LLM as mentioned in [Usage_with_LLMs.ipynb](Usage_with_LLMs.ipynb)
+
+	- This file pushes the filtered data to Pinecone DB
+		and uses it with an LLM.
+<!-- The collected data can be used for automated fine-tuning of LLMs in [this way](https://platform.openai.com/docs/guides/fine-tuning). -->
 
 
 ## :hammer_and_wrench: Contributing
@@ -90,11 +94,12 @@ No author is responsible for any misuse or damage caused by this code.
 Use it at your own risk. The code is provided as is without any guarantees or warranty.
 
 
-## :globe_with_meridians: Acknowledgement  <!-- (works referred/cited) -->
-- Dataset: HuggingFace FineWeb https://huggingface.co/datasets/HuggingFaceFW/fineweb
-- Unsafe text detections: Meta Llama Guard 2 https://github.com/meta-llama/PurpleLlama/blob/main/Llama-Guard2/MODEL_CARD.md
-- Other detections: Meta Llama 3 https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md
-<!-- - Image credits: OpenAI DALL-E 3 https://openai.com/index/dall-e-3/ -->
+## :globe_with_meridians: Acknowledgements  <!-- (works referred/cited) -->
+- Dataset: HuggingFace **FineWeb** https://huggingface.co/datasets/HuggingFaceFW/fineweb
+- Unsafe text detections: Meta **Llama Guard 2** https://github.com/meta-llama/PurpleLlama/blob/main/Llama-Guard2/MODEL_CARD.md
+- Unwanted text detections using LLM: Meta **Llama 3** (8B) https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md
+- Analytics page: Gradio https://gradio.app/
+- Vector DB: Pinecone https://www.pinecone.io/
 
 
 ## :email: Contact

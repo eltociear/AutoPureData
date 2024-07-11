@@ -1,7 +1,9 @@
 # Copyright (c) 2024 Praneeth Vadlapati
 
 import os
+import time
 from datasets import get_dataset_config_names
+from groq import Groq
 from IPython.display import display, Markdown
 from dotenv import load_dotenv
 load_dotenv()
@@ -86,5 +88,32 @@ def display_md(text):
 	except:
 		display(Markdown('_Error displaying text_'))
 		print(text)
+
+
+groq_client = Groq()
+
+def get_bot_response(messages, max_retries=3):
+	for _ in range(max_retries):
+		try:
+			chat_completion = groq_client.chat.completions.create(
+				messages=messages,
+				model=os.getenv('GROQ_MODEL'),
+			)
+			response = chat_completion.choices[0].message.content
+			response = response.strip()
+			if not response:
+				raise Exception('Empty response from the bot')
+			return response
+		except Exception as e:
+			print(f'Error: {e}. Retrying...')
+			time.sleep(1)
+	raise Exception('No response from the bot')
+
+
+def print_progress():
+	print('.', end='', flush=True)
+
+def print_error():
+	print('!', end='', flush=True)
 
 
