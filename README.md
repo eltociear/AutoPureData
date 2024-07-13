@@ -4,7 +4,7 @@
 <!-- # $${\color{darkgreen}title here}$$ -->
 <!-- # <span style="color: darkgreen; font-family: 'Segoe UI'; font-size: 48px;">title here</span> -->
 
-Automated Filtering of Unwanted Web Data to Update LLM Knowledge
+Automated Filtering of Undesirable Web Data to Update LLM Knowledge
 
 [![License: AFL v3](https://img.shields.io/badge/License-AFLv3-yellow.svg?style=for-the-badge)](./LICENSE.md)
 [![arxiv 2406.19271](https://img.shields.io/badge/arXiv-2406.19271-B31B1B?logo=arxiv&style=for-the-badge)](https://arxiv.org/abs/2406.19271)
@@ -48,9 +48,7 @@ Run the file [Analytics_and_Filtering.ipynb](Analytics_and_Filtering.ipynb)
 	to manually correct the flagging.
 
 After the filtering process, the data can be used with an LLM as mentioned in [Usage_with_LLMs.ipynb](Usage_with_LLMs.ipynb)
-
-	- This file pushes the filtered data to Pinecone DB
-		and uses it with an LLM.
+- This file pushes the filtered data to Pinecone DB and uses it with an LLM.
 <!-- The collected data can be used for automated fine-tuning of LLMs in [this way](https://platform.openai.com/docs/guides/fine-tuning). -->
 
 
