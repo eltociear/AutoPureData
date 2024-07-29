@@ -2,11 +2,15 @@
 
 import os
 import time
+import math
+
 from datasets import get_dataset_config_names
+from dotenv import load_dotenv
 from groq import Groq
 from IPython.display import display, Markdown
-from dotenv import load_dotenv
-load_dotenv()
+import pandas as pd
+
+load_dotenv(override=True)  # bypass cache and reload the variables
 
 dataset_name = 'HuggingFaceFW/fineweb'
 
@@ -53,8 +57,8 @@ harm_categories = {
 }
 flags_list = [
 	'sensitive_topic', 'biased', 'religious', 'lottery', 'scam', 
-	'advertisement', # 'cheating_service', 'unethical', 
-	'data_poisoning_attack', 'garbage'
+	'advertisement', 'data_poisoning_attack', # 'cheating_service', 'unethical', 
+	'unusable', 
 ]
 unwanted_flags = flags_list
 
@@ -63,6 +67,19 @@ def get_filename(index, process_type='full'):
 	if process_type:
 		process_type = f'.{process_type}'
 	return os.path.join(data_dir, f'New_data - {index}{process_type}.{ext}')
+
+
+def get_latest_index(process_type='full', empty_ok=False):
+	last_index = None
+	for index in range(1000):
+		file_name = get_filename(index, process_type)
+		if os.path.exists(file_name):
+			last_index = index
+		else:
+			break
+	if empty_ok and last_index is None:  # get empty filename
+		return get_filename(0, process_type)
+	return last_index
 
 
 def get_latest_filename(process_type='filtered', empty_ok=False):
@@ -90,30 +107,91 @@ def display_md(text):
 		print(text)
 
 
-groq_client = Groq()
+def extract_backtick_data(response):
+	# replace single backticks with triple backticks
+	if '```' not in response:
+		response = response.replace('`', '```')
+	response = response.replace('```\n```', '```')
+	# get the value from triple backticks
+	response = response.split('```')[1]
+	if response.startswith('csv'):  # remove 'csv' from start of backticks
+		response = response[3:].strip()
+	return response.strip()
 
-def get_bot_response(messages, max_retries=3):
+groq_client = Groq()
+groq_model_main = os.getenv('GROQ_MODEL')
+alternative_model = os.getenv('GROQ_ALTERNATIVE_MODEL')
+# alternative_model_2 = os.getenv('GROQ_ALTERNATIVE_MODEL_2')
+
+groq_model = groq_model_main
+tried_all_models = False
+
+def print_modelname():
+	print(f'Model: {groq_model}')
+
+
+def get_bot_response(messages, process_backticks=False, max_retries=4):
+	global groq_model, tried_all_models, groq_model_main, alternative_model #, alternative_model_2
 	for _ in range(max_retries):
 		try:
 			chat_completion = groq_client.chat.completions.create(
 				messages=messages,
-				model=os.getenv('GROQ_MODEL'),
+				model=groq_model,
 			)
 			response = chat_completion.choices[0].message.content
 			response = response.strip()
 			if not response:
 				raise Exception('Empty response from the bot')
+			if process_backticks:
+				response = extract_backtick_data(response)
 			return response
 		except Exception as e:
-			print(f'Error: {e}. Retrying...')
-			time.sleep(1)
+			e = str(e)
+			if '429' in e:  # Rate limit
+				# get text '23' from e='... Please try again in 23m3.714445312s. ...'
+				rate_limit_message = e.split('Please try again in')[1].split('m')[0].strip()
+				print(f'Rate Limit reached for {rate_limit_message} minutes. ', end='')
+				if tried_all_models:
+					print('Waiting...')
+					time.sleep(int(rate_limit_message) * 60)
+					continue
+				if alternative_model and groq_model != alternative_model:
+					groq_model = alternative_model
+					print(f'Rate limit reached. Trying with {groq_model}')
+					tried_all_models = False
+					continue
+				# if alternative_model_2 and groq_model != alternative_model_2:
+				# 	groq_model = alternative_model_2
+				# 	print(f'Rate limit reached. Trying with {groq_model}')
+				# 	tried_all_models = False
+				# 	continue
+				if groq_model != groq_model_main:  # Finally try using new model
+					groq_model = groq_model_main
+					print(f'Rate limit reached. Trying with {groq_model}')
+					tried_all_models = True
+					continue
+			print(f'Error: {e}. Retrying')
 	raise Exception('No response from the bot')
+    
 
 
 def print_progress():
 	print('.', end='', flush=True)
 
-def print_error():
+def print_error(e):
 	print('!', end='', flush=True)
+
+def is_na(val) -> bool:
+	if not val:
+		return True
+	if isinstance(val, float) and math.isnan(val):
+		return True
+	if pd.isna(val):
+		return True
+	return False
+
+def is_not_na(val) -> bool:
+    return not is_na(val) and val != safe_flag
+
 
 
