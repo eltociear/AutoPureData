@@ -92,7 +92,8 @@ No author is responsible for any misuse or damage caused by this code.
 Use it at your own risk. The code is provided as is without any guarantees or warranty.
 
 
-## :globe_with_meridians: Acknowledgements  <!-- (works referred/cited) -->
+## :globe_with_meridians: Acknowledgements
+- Special thanks to **Groq** (https://groq.com/) for a fast Llama 3 inference engine
 - Dataset: HuggingFace **FineWeb** https://huggingface.co/datasets/HuggingFaceFW/fineweb
 - Unsafe text detections: Meta **Llama Guard 2** https://github.com/meta-llama/PurpleLlama/blob/main/Llama-Guard2/MODEL_CARD.md
 - Unwanted text detections using LLM: Meta **Llama 3** (8B) https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md
