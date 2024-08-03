@@ -9,9 +9,8 @@ Automated Filtering of Undesirable Web Data to Update LLM Knowledge
 [![License: AFL v3](https://img.shields.io/badge/License-AFLv3-yellow.svg?style=for-the-badge)](./LICENSE.md)
 [![arxiv 2406.19271](https://img.shields.io/badge/arXiv-2406.19271-B31B1B?logo=arxiv&style=for-the-badge)](https://arxiv.org/abs/2406.19271)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
-
-[![Hits](https://hits.sh/github.com/Pro-GenAI/AutoPureData/hits.svg?view=today-total&style=for-the-badge&label=views&color=2a8f05&logo=github)](https://hits.sh/github.com/Pro-GenAI/AutoPureData/hits/)
 ![GitHub stars](https://img.shields.io/github/stars/Pro-GenAI/AutoPureData?style=for-the-badge&logo=github)
+<!-- [![Hits](https://hits.sh/github.com/Pro-GenAI/AutoPureData/hits.svg?view=today-total&style=for-the-badge&label=views&color=2a8f05&logo=github)](https://hits.sh/github.com/Pro-GenAI/AutoPureData/hits/) -->
 
 Created by Praneeth Vadlapati ([@prane-eth](https://github.com/prane-eth))
 
