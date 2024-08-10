@@ -29,7 +29,7 @@ The auto-filtered data can be used to automatically update knowledge of LLMs.
 - **Unsafe content** :biohazard:: Toxic, threat, insult, discrimination, political, self-harm,
 	religious, violence, sexual, profanity, flirtation, spam, scam, misleading, and more
 - **Content from unreliable sources** :newspaper:: Unsafe websites and unindexed domains (that are not crawled by search engines)
-- **Peronal details** :bust_in_silhouette:: Phone, address, credit card, SSN, IP address, and more
+- **Personal details** :bust_in_silhouette:: Phone, address, credit card, SSN, IP address, and more
 - **Attacks** :shield:: Adversarial attack attempts (with Data Poisoning)
 
 Languages supported: Only English for now (more languages will be added when contributors are available)
